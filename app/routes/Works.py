@@ -1,10 +1,10 @@
 
 from typing import List
 from fastapi import APIRouter, Depends, HTTPException
-from app.database import get_db
+from database import get_db
 from datetime import datetime
-from app.auth import verify_current_user
-from app import models, schema
+from auth import verify_current_user
+import models, schema
 from sqlalchemy.orm import Session
 
 

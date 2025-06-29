@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-from app.routes import authentication, Works, supports, Joins
-from app.database import create_all_tables
+from routes import authentication, Works, supports, Joins
+from database import create_all_tables
 
-
+# lol
 create_all_tables()
 app = FastAPI()
 

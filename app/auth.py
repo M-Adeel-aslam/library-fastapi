@@ -3,8 +3,8 @@ from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from datetime import datetime, timedelta
 from sqlalchemy.orm import Session
-from app.database import get_db
-from app import models
+from database import get_db
+import models
 from dotenv import load_dotenv
 import os
 
@@ -13,7 +13,7 @@ OAuthScheme = OAuth2PasswordBearer(tokenUrl="authentication/login")
 
 load_dotenv()
 
-EXPIRY_TOKEN_MINUTES = os.getenv("EXPIRY_TOKEN_MINUTES")
+EXPIRY_TOKEN_MINUTES = int(os.getenv("EXPIRY_TOKEN_MINUTES"))
 KEY = os.getenv("KEY")
 ALGORITHM = os.getenv("ALGORITHM")
 
